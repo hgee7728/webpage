@@ -27,7 +27,6 @@
       height: 100%;
       margin: 0 auto;
     }    
-    /* 추후에 스크롤바 내릴 때 동작하도록 js 작성 */
     @keyframes to_left {
       from { transform: translateX(1000px);}      
       to { transform: translateX(0);}
@@ -36,7 +35,6 @@
       from { transform: translateX(-1000px);}      
       to { transform: translateX(0);}
     }
-    /* 추후에 시간 간격으로 투명해졋다 보이는 기능 js 작성 */
     @keyframes opacity {
       from { opacity: 0;}
       50% { opacity: 0.5;}      
@@ -198,6 +196,47 @@
       background-position: right;
       padding-right: 10px;
       background-size: 20px;
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px){
+      header{
+      height: 80px;
+      border: 0px;
+      }
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px){
+      header .main_menu, .sub_menu{
+      background-repeat: no-repeat;
+      overflow: hidden;
+      position: absolute;
+      text-indent: -20000px;
+      margin: 0 0 5px 200px;
+      background-image: url(./images/menu_icon.png);
+      }
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px){
+      header .main_menu .item:hover .item_name{
+      display: none;
+      }
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px){
+      header #logo{
+      text-indent: -20000px;
+      }
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px){
+      header #logo{
+      position: relative;
+      width: 80px;
+      top: 13px;
+      background-size: 50px;
+      background-image: url(./images/starbuckslogo.png);
+      background-repeat: no-repeat;
+      }
+    }
+    @media screen and (min-width: 500px) and (max-width: 800px){
+      header .main_menu .item:hover .item_contents {
+      display: none;
+      }
     }
   </style>  
   <style>
@@ -785,7 +824,6 @@
       height: 100%;                     
     }    
     .reserve_magazine_inner {
-      /* border: 1px solid black;  */
       width: 1800px;
       height: 400px;
       position: relative;
@@ -805,7 +843,6 @@
       bottom: 0;            
     }        
     #reserve_magazine_title img {      
-      /* border: 1px solid black; */
       position: absolute; 
       box-sizing: border-box;     
       top: 20%;
@@ -826,17 +863,11 @@
       line-height: 35px;
     }
     #reserve_magazine_picture {
-      /* border: 1px solid black; */
+      display: none;
       position: absolute;
-      box-sizing: border-box;
-      bottom: 20px;
-      /* left: 1300px;       */
+      bottom: 20px;      
       left:90%
-    }
-    #reserve_magazine_picture img{      
-      max-width: none;
-      min-width: auto;
-    }    
+    }   
      /* #reserve_magazine_picture img{      
       position: absolute;
       width: 350px;
@@ -850,14 +881,13 @@
       background: url('./images/store_bg.jpg');
     }
     #store_inner {
-      /* border: 1px solid red; */
       position: relative;      
       width: 1600px;
       height: 400px;      
     }
-    #store_wrap {
+    .store_wrap {
+      display: none;
       position: absolute;
-      /* border: 1px solid black; */
       box-sizing: border-box;
       width: 700px;
       height: 350px;
@@ -886,11 +916,10 @@
       right: 0;
     }    
     #store_text_wrap {
-      /* border: 1px solid blue; */
       position: absolute;
       width: 600px;
       height: 300px;
-      right: 0;
+      right: -1000px;      
     }
     .store_txt1 {
       position: absolute;
@@ -899,7 +928,7 @@
       top: 80px;  
       font-size: 1.5em;
       line-height: 1.3;
-      animation: to_left 1.2s ease-out;  
+      /* animation: to_left 1.2s ease-out;   */
     }
     .store_txt2 {
       position: absolute;
@@ -907,7 +936,7 @@
       height: 70px;
       top: 170px;
       font-size: 14px;      
-      animation: to_left 1.5s ease-out;
+      /* animation: to_left 1.5s ease-out; */
     }
     #store_text_wrap  .store_btn {
       position: absolute;      
@@ -920,7 +949,7 @@
       bottom: 100px;
       text-align: center;      
       font-weight: bold;
-      animation: to_left 1.7s ease-out;      
+      /* animation: to_left 1.7s ease-out;       */
     }
     #store_text_wrap  .store_btn a {      
       display: block;
@@ -945,8 +974,8 @@
         #reserve_magazine_btn a {left: 55%;}
         #reserve_magazine_title img {left:30%}   
         
-        #store_wrap {left:10%}
-        #store_text_wrap {left: 40%}
+        .store_wrap {left:5%}
+        #store_text_wrap {left: 100%;}
         .store_exp4 > img {left: 50%}
        }
      </style>
@@ -956,9 +985,9 @@
         width: 100%;        
         background-color: #2C2A29;      
       }
-      #footer_bot_menu {
+      #footer_bot_menu {      
         display: block;        
-        width: 1200px;
+        width: 1300px;
         height: 300px;
         margin: 0 auto;  
         padding: 30px;    
@@ -967,27 +996,22 @@
       }
       #footer_bot_menu a {           
         font-size: 12px;
-        color: white;      
+        color: white;   
       }    
-      #footer_bot_menu a:hover {         
-        text-decoration: underline;
-      }        
-      #footer_bot_menu tr th {        
+      #footer_bot_menu tr th {                
         box-sizing: border-box;
         width: 300px;
         text-align: left;
       }      
       #footer_bot_menu tr:first-child {
         line-height: 3;
-      }         
+      }   
       .footer_award_wrap {         
         background: #282828;
-        /* border: 1px solid black; */
         position: relative;
         width: 100%;
       }
       .footer_award_wrap .footer_award_wrap_inner {
-        /* border: 1px solid black; */
         width: 1300px;
         height: 50px;
         margin: 10px auto;
@@ -996,13 +1020,11 @@
         float: left;
       }   
       .copyright_list {
-        /* border: 1px solid black; */
         clear: both;
         height: 200px;      
         background-color: #2C2A29;
       }
       #copyright_1 {
-      /* border: 1px solid black; */
         width: 1500px;
         height: 40px;      
         margin: 0 auto;
@@ -1023,7 +1045,6 @@
         border-right: none;
       }
       #copyright_2 {
-        /* border: 1px solid black; */
         width: 500px;
         height: 60px;      
         margin: 0 auto;
@@ -1044,7 +1065,6 @@
         font-size: 11px;
       }
       #copyright_3 {
-        /* border: 1px solid black; */
         width: 1200px;
         height: 40px;      
         margin: 0 auto;
@@ -1054,7 +1074,6 @@
         text-align: center;
         color: gray;
       }
-      
     </style>
   
 </head>
@@ -1565,24 +1584,36 @@
     <section class="reserve_magazine_packing">
       <div class="reserve_magazine_inner"> 
         <div class="reserve_magazine_wrap">
-          <div id="reserve_magazine_title"><img src="./images/reserve_text_pc_220120.png" alt="reserv_magazine_title"></div>     
+          <div id="reserve_magazine_title">
+            <img src="./images/reserve_text_pc_220120.png" alt="reserve_magazine_title">
+          </div>     
           <div id="reserve_magazine_btn"><a href="#">자세히 보기</a></div>
-          <div id="reserve_magazine_picture"><img src="./images/reserve_visual_pc_220119.png" alt=""></div>
+          <div id="reserve_magazine_picture">
+            <img src="./images/reserve_visual_pc_220119.png" alt="reserve_magazine_visual">
+          </div>
         </div>                             
       </div>    
     </section>
     <section id="store_packing">
       <div id="store_inner">
-        <div id="store_wrap">
-          <div class="store_exp1"><img src="./images/store_exp_img01.png" alt="starbucks_exp1"></div>
-          <div class="store_exp2"><img src="./images/store_exp_img02.png" alt="starbucks_exp2"></div>
-          <div class="store_exp3"><img src="./images/store_exp_img03.png" alt="starbucks_exp3"></div>
+        <div class="store_wrap">
+          <div class="store_exp1">
+            <img src="./images/store_exp_img01.png" alt="starbucks_exp1">
+          </div>
+          <div class="store_exp2">
+            <img src="./images/store_exp_img02.png" alt="starbucks_exp2">
+          </div>
+          <div class="store_exp3">
+            <img src="./images/store_exp_img03.png" alt="starbucks_exp3">
+          </div>
         </div>        
-        <div class="store_exp4"><img src="./images/store_exp_img04.png" alt="starbucks_exp4"></div>
+        <div class="store_exp4">
+          <img src="./images/store_exp_img04.png" alt="starbucks_exp4">
+          /div>
         <div id="store_text_wrap">
           <div class="store_txt1">스타 벅스를 가까이에서 경험해
             보세요.<br> 고객님과 가장 가까이 있는 매장을 찾아보세요</div>
-          <div class="store_txt2" id="left">차별화된 커피 경험을 누릴 수 있는 <b>리저브<sup>tm</sup>매장</b><br>다양한 방법으로 편리하게 즐길 수 있는 <b>드라이브 스루 매장</b><br>함께해서 더 따듯할 수 있는 지역사회 소통 공간 <b>커뮤니티 매장</b></div>
+          <div class="store_txt2" id="left">차별화된 커피 경험을 누릴 수 있는 <b>리저브<sup>tm</sup>매장</b><br>다양한 방법으로 편리하게 즐길 수 있는 <b>드라이브 스루 매장</b><br>함께해서 더 따뜻할 수 있는 지역사회 소통 공간 <b>커뮤니티 매장</b></div>
           <div class="store_btn"><a href="#">매장 찾기</a></div>
         </div>        
       </div>
@@ -1679,14 +1710,13 @@
         </div>      
         <div id="copyright_3">
           <p>사업자등록번호 : 201-81-21515 주식회사 에스씨케이컴퍼니 대표이사 : 송 데이비드 호섭 TEL : 1522-3232 개인정보 책임자 : 하익성</p>
-          <p>ⓒ 2022 Starbucks Coffee Company. All Rights Reserved.</p>
+          <p>&copy; 2022 Starbucks Coffee Company. All Rights Reserved.</p>
         </div>      
       </div>
     </footer>
   </div>
-
-  <script>
-    
+  <!-- section 2 -->
+  <script>    
     var ProDown = document.querySelector("#prodown")
     var Promosion = document.querySelector(".promosion")
     ProDown.addEventListener('click',function(e){
@@ -1700,6 +1730,30 @@
 
   </script>
   
+  <!-- section 7-8 animation -->
+  <script>
+    $(reserveMagazineAnimationHandler);
+    $(storeAnimationHandler);
 
+    function reserveMagazineAnimationHandler() {
+      $("#reserve_magazine_picture").fadeIn(3000, "swing");
+    }
+    function storeAnimationHandler() {
+      $(".store_txt1").animate({
+        marginLeft: "-1000px"        
+      }, 1500, "swing");
+
+      $(".store_txt2").animate({
+        marginLeft: "-1000px"
+      }, 2000, "swing");
+
+      $(".store_btn").animate({
+        marginLeft: "-1000px"
+      }, 2500, "swing");
+
+      $(".store_wrap").fadeIn(3000, "swing");
+    }
+  </script>
+ 
 </body>
 </html>
